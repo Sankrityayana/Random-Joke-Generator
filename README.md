@@ -5,7 +5,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-A simple and fun random joke generator with **500 jokes** across 5 categories that brings laughter to your day! Built with vanilla HTML, CSS, and JavaScript featuring a beautiful light multiple color theme without gradients.
+A simple and fun random joke generator with **1000 jokes** across 5 categories that brings laughter to your day! Built with vanilla HTML, CSS, and JavaScript featuring a beautiful light multiple color theme without gradients.
 
 ## ✨ Features
 
@@ -115,7 +115,7 @@ Random-Joke-Generator/
 
 ### JavaScript Features
 - **Object-Oriented Programming** - JokeGenerator class
-- **Built-in Joke Database** - 50+ jokes across 5 categories
+- **Built-in Joke Database** - 200+ jokes across 5 categories
 - **Random Selection** - Math.random() for joke picking
 - **Dynamic Display** - Different layouts for single vs two-part jokes
 - **Clipboard API** - Copy jokes to clipboard
@@ -125,13 +125,13 @@ Random-Joke-Generator/
 
 ## 🎯 Joke Database
 
-The generator includes **500 jokes** across **5 categories**:
+The generator includes **1000 jokes** across **5 categories**:
 
-- **Programming**: 100 jokes about coding and tech
-- **General**: 100 jokes for everyday humor
-- **Puns**: 100 jokes with clever wordplay
-- **Dad Jokes**: 100 classic dad jokes
-- **Science**: 100 jokes for science enthusiasts
+- **Programming**: 200 jokes about coding and tech
+- **General**: 200 jokes for everyday humor
+- **Puns**: 200 jokes with clever wordplay
+- **Dad Jokes**: 200 classic dad jokes
+- **Science**: 200 jokes for science enthusiasts
 
 ## 🌟 Key Features Explained
 
