@@ -1,0 +1,493 @@
+/* ===================================
+   CSS Reset & Variables
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Light Background Colors */
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+    --bg-card: #fafbfd;
+    --bg-hover: #f0f2f8;
+    
+    /* Text Colors */
+    --text-primary: #1a2332;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    
+    /* Accent Colors - Multiple Light Colors */
+    --color-blue: #3b82f6;
+    --color-blue-light: #60a5fa;
+    --color-blue-bg: #eff6ff;
+    
+    --color-purple: #8b5cf6;
+    --color-purple-light: #a78bfa;
+    --color-purple-bg: #f5f3ff;
+    
+    --color-teal: #14b8a6;
+    --color-teal-light: #2dd4bf;
+    --color-teal-bg: #f0fdfa;
+    
+    --color-orange: #f59e0b;
+    --color-orange-light: #fbbf24;
+    --color-orange-bg: #fffbeb;
+    
+    --color-pink: #ec4899;
+    --color-pink-light: #f472b6;
+    --color-pink-bg: #fdf2f8;
+    
+    --color-green: #10b981;
+    --color-green-light: #34d399;
+    --color-green-bg: #f0fdf4;
+    
+    /* Border & Shadow */
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 12px 32px rgba(0, 0, 0, 0.12);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* ===================================
+   Base Styles
+   =================================== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* ===================================
+   Container
+   =================================== */
+.container {
+    max-width: 700px;
+    width: 100%;
+}
+
+/* ===================================
+   Joke Generator Card
+   =================================== */
+.joke-generator {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ===================================
+   Header Section
+   =================================== */
+.generator-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.logo-icon {
+    font-size: 3rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.tagline {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+/* ===================================
+   Category Section
+   =================================== */
+.category-section {
+    margin-bottom: 2rem;
+}
+
+.category-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.category-select {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.category-select:focus {
+    outline: none;
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 3px var(--color-blue-bg);
+}
+
+.category-select:hover {
+    background: var(--bg-hover);
+    border-color: var(--color-blue-light);
+}
+
+/* ===================================
+   Joke Display Area
+   =================================== */
+.joke-display {
+    background: var(--color-blue-bg);
+    border: 2px solid var(--color-blue);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+}
+
+.joke-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: rotate 3s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+}
+
+.joke-text {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ===================================
+   Joke Parts (Setup & Punchline)
+   =================================== */
+.joke-parts {
+    margin-bottom: 2rem;
+}
+
+.setup-section,
+.punchline-section {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.setup-section {
+    border-color: var(--color-orange);
+    background: var(--color-orange-bg);
+}
+
+.punchline-section {
+    border-color: var(--color-green);
+    background: var(--color-green-bg);
+}
+
+.label-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.setup-text,
+.punchline-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ===================================
+   Button Group
+   =================================== */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.25rem 2rem;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: var(--color-blue);
+    color: white;
+    border-color: var(--color-blue);
+}
+
+.btn-primary:hover {
+    background: var(--color-blue-light);
+    border-color: var(--color-blue-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: var(--color-green);
+    color: white;
+    border-color: var(--color-green);
+}
+
+.btn-secondary:hover {
+    background: var(--color-green-light);
+    border-color: var(--color-green-light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Accent Button */
+.btn-accent {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.btn-accent:hover {
+    background: var(--color-purple-bg);
+    border-color: var(--color-purple);
+    color: var(--color-purple);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===================================
+   Joke Counter
+   =================================== */
+.joke-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--color-teal-bg);
+    border: 2px solid var(--color-teal);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.counter-label {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.counter-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-teal);
+}
+
+/* ===================================
+   Toast Notification
+   =================================== */
+.toast {
+    position: fixed;
+    bottom: -100px;
+    right: 2rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: 2px solid var(--color-green);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 1000;
+    transition: bottom var(--transition-normal);
+}
+
+.toast.show {
+    bottom: 2rem;
+}
+
+.toast-icon {
+    font-size: 1.5rem;
+}
+
+.toast-message {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .joke-generator {
+        padding: 2rem 1.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+    }
+
+    .joke-display {
+        padding: 2rem 1.5rem;
+        min-height: 180px;
+    }
+
+    .joke-icon {
+        font-size: 3rem;
+    }
+
+    .joke-text {
+        font-size: 1.15rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .setup-text,
+    .punchline-text {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .joke-generator {
+        padding: 1.5rem 1rem;
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .joke-display {
+        padding: 1.5rem 1rem;
+    }
+
+    .joke-text {
+        font-size: 1rem;
+    }
+
+    .toast {
+        right: 1rem;
+        left: 1rem;
+    }
+}
+
+/* ===================================
+   Accessibility
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+button:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 2px;
+}
+
+/* Selection Color */
+::selection {
+    background: var(--color-purple-bg);
+    color: var(--color-purple);
+}

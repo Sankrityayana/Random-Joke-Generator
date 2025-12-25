@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Random Joke Generator - Get random jokes to brighten your day!">
+    <title>😂 Random Joke Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Joke Generator Card -->
+        <div class="joke-generator">
+            <!-- Header -->
+            <div class="generator-header">
+                <div class="logo">
+                    <span class="logo-icon">😂</span>
+                    <h1 class="logo-text">Random Joke Generator</h1>
+                </div>
+                <p class="tagline">Get a laugh with our collection of hilarious jokes!</p>
+            </div>
+
+            <!-- Category Selection -->
+            <div class="category-section">
+                <label for="category" class="category-label">Choose Category:</label>
+                <select id="category" class="category-select">
+                    <option value="all">All Jokes</option>
+                    <option value="programming">Programming</option>
+                    <option value="general">General</option>
+                    <option value="puns">Puns</option>
+                    <option value="dad">Dad Jokes</option>
+                    <option value="science">Science</option>
+                </select>
+            </div>
+
+            <!-- Joke Display Area -->
+            <div class="joke-display" id="jokeDisplay">
+                <div class="joke-icon">🎭</div>
+                <p class="joke-text" id="jokeText">Click the button below to get a random joke!</p>
+            </div>
+
+            <!-- Setup and Punchline (for two-part jokes) -->
+            <div class="joke-parts" id="jokeParts" style="display: none;">
+                <div class="setup-section">
+                    <span class="label-icon">❓</span>
+                    <p class="setup-text" id="setupText"></p>
+                </div>
+                <div class="punchline-section" id="punchlineSection" style="display: none;">
+                    <span class="label-icon">💥</span>
+                    <p class="punchline-text" id="punchlineText"></p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="button-group">
+                <button id="generateBtn" class="btn btn-primary">
+                    <span class="btn-icon">🎲</span>
+                    Generate Joke
+                </button>
+                <button id="revealBtn" class="btn btn-secondary" style="display: none;">
+                    <span class="btn-icon">👀</span>
+                    Reveal Punchline
+                </button>
+                <button id="copyBtn" class="btn btn-accent">
+                    <span class="btn-icon">📋</span>
+                    Copy Joke
+                </button>
+            </div>
+
+            <!-- Joke Counter -->
+            <div class="joke-counter">
+                <span class="counter-label">Jokes Generated:</span>
+                <span class="counter-value" id="jokeCounter">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✅</span>
+        <span class="toast-message">Joke copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
