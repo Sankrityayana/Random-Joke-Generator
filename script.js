@@ -1529,14 +1529,12 @@ const jokesDatabase = {
         { type: 'twopart', setup: "What do you call a periodic table joke?", punchline: "Elementary humor!" },
         { type: 'single', joke: "Biologists have cell phones, physicists have potential!" }
     ]
-  };
+};
 
-  // Initialize the joke generator when page loads
-  new JokeGenerator();
-})();
 // ===================================
 // Random Joke Generator Class
 // ===================================
+(function() {
 class JokeGenerator {
     constructor() {
         this.initializeElements();
@@ -1709,6 +1707,10 @@ class JokeGenerator {
         }, 3000);
     }
 }
+
+// Initialize the joke generator when page loads
+new JokeGenerator();
+})();
 
 // ===================================
 // Add Fade-In Animation
